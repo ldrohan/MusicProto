@@ -11,6 +11,10 @@ class BandsController < ApplicationController
     
   end
 
+  def new
+    @band = Band.new
+  end
+
   def create
     @band = Band.create(band_params)
     respond_to do |format|
