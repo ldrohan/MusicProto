@@ -12,6 +12,7 @@ $(document).ready(function(){
 				console.log(data);
 			} 
 		});
+
 	
 var loadAlbums = function() {
 		$.ajax('https://itunes.apple.com/search?term=' + BandName + '&entity=album', {type: 'get', dataType: 'jsonp'}).success
@@ -20,10 +21,24 @@ var loadAlbums = function() {
 			//console.log(albums)
 			
 			 for(var i in albums) {
-			 $('#albums').append(albums[i]["collectionName"] + ', ');
-			 $('#albums').append('<img src="' + albums[i]["artworkUrl60"] + '">');
+			   var albumName = albums[i]["collectionName"];
+			   var releaseDate = albums[i]["releaseDate"];
+			   console.log(albumName, releaseDate);
+			   $('#albums').append(albums[i]["collectionName"] + ', ');
+			   $('#albums').append('<img src="' + albums[i]["artworkUrl60"] + '">');
+			 
+			   $.ajax({url:('/albums/create'), method: ('post'), 
+					data: {"album": {"name":albumName, "releaseDate":releaseDate}}, dataType: "json", success: function(data) {
+					console.log(data);
+					} 
+			  });
+
 			 }
+			 
+	
 		 });
+
+		
 	}
 loadAlbums();
 

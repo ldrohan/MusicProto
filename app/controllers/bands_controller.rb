@@ -5,7 +5,7 @@ class BandsController < ApplicationController
     #@body = JSON.parse(results.body)
     #binding.pry
     respond_to do |format|
-    	format.html #{render :html => @body }
+      format.html #{render :html => @body }
       format.json {render :json => @bands, :only => [:name]}
     end
     @band = Band.new
@@ -22,11 +22,11 @@ class BandsController < ApplicationController
         format.json { render json: @band.errors, status: :unprocessable_entity}
       end
     end
-  #   results = Typhoeus.get("https://itunes.apple.com/search?term=weezer&entity=album")
-  #   @body = JSON.parse(results.body)
-    end
-    private
-    def band_params
-      params.require(:band).permit(:name)
-    end
+    #   results = Typhoeus.get("https://itunes.apple.com/search?term=weezer&entity=album")
+    #   @body = JSON.parse(results.body)
   end
+  private
+  def band_params
+    params.require(:band).permit(:name)
+  end
+end
