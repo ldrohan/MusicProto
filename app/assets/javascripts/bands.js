@@ -20,7 +20,7 @@ $(document).ready(function(){
 			$('.delete').on("click", function(e) {
 				e.preventDefault();
         var parent = $(this).parent();
-        console.log(parent.attr('id'));
+        //console.log(parent.attr('id'));
 					$.ajax({
 					  type: 'get',
 					  url: 'bands/delete', 
@@ -33,9 +33,9 @@ $(document).ready(function(){
 
 
 
-var loadAlbums = function(bandID) {
-		$.ajax('https://itunes.apple.com/search?term=' + BandName + '&entity=album', {type: 'get', dataType: 'jsonp'}).success
-		(function(data){
+   var loadAlbums = function(bandID) {
+		 $.ajax('https://itunes.apple.com/search?term=' + BandName + '&entity=album', {type: 'get', dataType: 'jsonp'}).success
+		 (function(data){
 			var albums = data["results"];
 			//console.log(albums)
 			
@@ -54,9 +54,9 @@ var loadAlbums = function(bandID) {
 			  });
 			 }
 			});
-}
+  }
 
-//loadAlbums();
+
 
 	});
 
