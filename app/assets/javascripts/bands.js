@@ -10,13 +10,15 @@ $(document).ready(function(){
 		//SAVES BANDS TO THE DATABASE
 		$.ajax({url:('/bands/create'), method: ('post'), 
 			data: {"band": {"name":BandName}}, dataType: "json", success: function(data) {
+				var bandID = data.id;
+				loadAlbums(bandID);
 				console.log(data);
 			} 
 		});
 
 	
 			$('.delete').on("click", function(e) {
-				//e.preventDefault();
+				e.preventDefault();
         var parent = $(this).parent();
         console.log(parent.attr('id'));
 					$.ajax({
@@ -31,30 +33,30 @@ $(document).ready(function(){
 
 
 
-var loadAlbums = function() {
+var loadAlbums = function(bandID) {
 		$.ajax('https://itunes.apple.com/search?term=' + BandName + '&entity=album', {type: 'get', dataType: 'jsonp'}).success
 		(function(data){
 			var albums = data["results"];
 			//console.log(albums)
 			
 			 for(var i in albums) {
+			 	 var parent = $(this).parent();
 			   var albumName = albums[i]["collectionName"];
 			   var releaseDate = albums[i]["releaseDate"];
-			   console.log(albumName, releaseDate);
+			   //console.log(parent);
 			   $('#albums').append(albums[i]["collectionName"] + ', ');
 			   $('#albums').append('<img src="' + albums[i]["artworkUrl60"] + '">');
-			 
+				//ITERATES THROUGH API RETURN HASH AND SAVES EACH ALBUM TO DB.			 
 			   $.ajax({url:('/albums/create'), method: ('post'), 
-					data: {"album": {"name":albumName, "releaseDate":releaseDate,}}, dataType: "json", success: function(data) {
+					data: {"album": {"name":albumName, "releaseDate":releaseDate, "band_id":bandID}}, dataType: "json", success: function(data) {
 					console.log(data);
 					} 
 			  });
 			 }
 			});
-
 }
 
-loadAlbums();
+//loadAlbums();
 
 	});
 
