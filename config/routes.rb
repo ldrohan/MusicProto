@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get '/bands', to: 'bands#index'
   post '/bands/create', to: 'bands#create'
-
+  get '/bands/delete', to: 'bands#delete'
+  
   post '/albums/create', to: 'albums#create'
+
 end

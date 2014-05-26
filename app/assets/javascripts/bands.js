@@ -4,6 +4,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		var BandName = $("#bandName").val();
 		$('#bands').append("<li>" + BandName + "</li>");
+		$('#bands').append('<button id="delete" type="submit">Delete</button>')
 
 		$("#bandName").val("");
 		
@@ -14,6 +15,26 @@ $(document).ready(function(){
 		});
 
 	
+			$('#delete').click(function(e) {
+				e.preventDefault();
+        var parent = $(this).closest('li');
+					$.ajax({
+					  type: 'get',
+					  url: 'bands/delete', 
+					  data: 'ajax=1&delete=' + $(this).attr('id'),
+					  beforeSend: function() {
+					    parent.animate({'backgroundColor':'#fb6c6c'},300);
+					  },
+					  success: function() {
+				      parent.fadeOut(300,function() {
+						  parent.remove();
+						});
+					 }
+					});        
+				 });
+
+
+
 var loadAlbums = function() {
 		$.ajax('https://itunes.apple.com/search?term=' + BandName + '&entity=album', {type: 'get', dataType: 'jsonp'}).success
 		(function(data){
@@ -28,7 +49,7 @@ var loadAlbums = function() {
 			   $('#albums').append('<img src="' + albums[i]["artworkUrl60"] + '">');
 			 
 			   $.ajax({url:('/albums/create'), method: ('post'), 
-					data: {"album": {"name":albumName, "releaseDate":releaseDate}}, dataType: "json", success: function(data) {
+					data: {"album": {"name":albumName, "releaseDate":releaseDate,}}, dataType: "json", success: function(data) {
 					console.log(data);
 					} 
 			  });
@@ -39,7 +60,7 @@ var loadAlbums = function() {
 		 });
 
 		
-	}
+}
 loadAlbums();
 
 	});
@@ -48,7 +69,8 @@ loadAlbums();
 	var loadBands = function() {
 			$.ajax('/bands.json', {type: 'get'}).success(function(data){
 				for (var i in data) {
-					$('#bands').append('<li>' + data[i]["name"] + '</li>' );
+					$('#bands').append('<li id=' + data[i]["id"] + '>' + data[i]["name"] + '</li>' );
+					$('#bands').append('<button id="delete" type="submit">' + 'Delete</button>');
 			}
 		});
 	}
