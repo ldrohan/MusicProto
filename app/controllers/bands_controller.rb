@@ -22,8 +22,6 @@ class BandsController < ApplicationController
         format.json { render json: @band.errors, status: :unprocessable_entity}
       end
     end
-    #   results = Typhoeus.get("https://itunes.apple.com/search?term=weezer&entity=album")
-    #   @body = JSON.parse(results.body)
   end
 
   def delete

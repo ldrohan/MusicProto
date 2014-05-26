@@ -7,10 +7,10 @@ class AlbumsController < ApplicationController
     @album = Album.create(album_params)
 
     respond_to do |format|
-      if @band.save
-        format.json { render json: @band, status: :created }
+      if @album.save
+        format.json { render json: @album, status: :created }
       else
-        format.json { render json: @band.errors, status: :unprocessable_entity}
+        format.json { render json: @album.errors, status: :unprocessable_entity}
       end
     end
   end

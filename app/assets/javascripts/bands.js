@@ -3,11 +3,11 @@ $(document).ready(function(){
 	$('#submit').click(function(e){
 		e.preventDefault();
 		var BandName = $("#bandName").val();
-		$('#bands').append("<li>" + BandName + "</li>");
-		$('#bands').append('<button id="delete" type="submit">Delete</button>')
+		$('#bands').append("<li>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</li>");
+		// $('#bands').append('<button class="delete" type="submit">Delete</button>')
 
 		$("#bandName").val("");
-		
+		//SAVES BANDS TO THE DATABASE
 		$.ajax({url:('/bands/create'), method: ('post'), 
 			data: {"band": {"name":BandName}}, dataType: "json", success: function(data) {
 				console.log(data);
@@ -15,23 +15,19 @@ $(document).ready(function(){
 		});
 
 	
-			$('#delete').click(function(e) {
-				e.preventDefault();
-        var parent = $(this).closest('li');
+			$('.delete').on("click", function(e) {
+				//e.preventDefault();
+        var parent = $(this).parent();
+        console.log(parent.attr('id'));
 					$.ajax({
 					  type: 'get',
 					  url: 'bands/delete', 
-					  data: 'ajax=1&delete=' + $(this).attr('id'),
-					  beforeSend: function() {
-					    parent.animate({'backgroundColor':'#fb6c6c'},300);
-					  },
-					  success: function() {
-				      parent.fadeOut(300,function() {
-						  parent.remove();
-						});
-					 }
+					  data: 'ajax=' + parent.attr('id') + '&delete=',
 					});        
-				 });
+				  parent.fadeOut(300,function(){
+				 	parent.remove();
+				});
+			});
 
 
 
@@ -53,27 +49,24 @@ var loadAlbums = function() {
 					console.log(data);
 					} 
 			  });
-
 			 }
-			 
-	
-		 });
+			});
 
-		
 }
+
 loadAlbums();
 
 	});
 
-		
+		//
 	var loadBands = function() {
 			$.ajax('/bands.json', {type: 'get'}).success(function(data){
 				for (var i in data) {
-					$('#bands').append('<li id=' + data[i]["id"] + '>' + data[i]["name"] + '</li>' );
-					$('#bands').append('<button id="delete" type="submit">' + 'Delete</button>');
+					$('#bands').append('<li id=' + data[i]["id"] + '>' + data[i]["name"] + '<button class="delete" type="submit">' + 'Delete</button>' +'</li>' );
+					
 			}
 		});
 	}
 	//loadAlbums();
-	loadBands();
+  loadBands();
 });
