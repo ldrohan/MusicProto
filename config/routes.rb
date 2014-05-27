@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'bands#index'
 
   get '/bands', to: 'bands#index'
