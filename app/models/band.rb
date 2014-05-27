@@ -1,3 +1,4 @@
 class Band < ActiveRecord::Base
-	has_many :albums
+	belongs_to :album
+	belongs_to :user
 end
