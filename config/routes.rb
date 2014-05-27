@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/bands/delete', to: 'bands#delete'
   
   post '/albums/create', to: 'albums#create'
-
+  get '/albums/recent', to: 'albums#recent_albums'
 end

@@ -1,11 +1,18 @@
 
 $(document).ready(function(){
 
+	
 
-	console.log('add click handler');
-	console.log($('.delete'));
+	var recentAlbums = function() {
+			$.ajax('/albums/recent.json', {type: 'get'}).success(function(data){
+				for (var i in data) {
+					$('#recentalbums').append('<li>' + data[i] + '</li>');
+				}
+		});
+	}
 
-	// #bands
+recentAlbums();
+	
 
 	$('#bands').on("click", '.delete',function(e) {
 		e.preventDefault();

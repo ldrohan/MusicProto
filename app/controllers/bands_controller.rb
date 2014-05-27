@@ -6,7 +6,7 @@ class BandsController < ApplicationController
       format.json {render :json => @bands, :only => [:id, :name]}
     end
     @band = Band.new
-  end
+end
 
   def create
     @band = Band.create(band_params)
