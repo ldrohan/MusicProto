@@ -1,15 +1,18 @@
 class BandsController < ApplicationController
+  
+
   def index
-    @bands = Band.all
+    @bands = Band.where(user_id: current_user)
     respond_to do |format|
       format.html #{render :html => @body }
       format.json {render :json => @bands, :only => [:id, :name]}
     end
     @band = Band.new
-end
+  end
 
   def create
     @band = Band.create(band_params)
+    @band.user_id = current_user.id
     respond_to do |format|
       if @band.save
         format.json { render json: @band, status: :created }
