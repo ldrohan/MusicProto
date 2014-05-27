@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-  
+  before_action :authenticate_user!
 
   def index
     @bands = Band.where(user_id: current_user)
