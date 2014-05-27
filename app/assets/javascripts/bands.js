@@ -1,5 +1,28 @@
 
 $(document).ready(function(){
+
+
+	console.log('add click handler');
+	console.log($('.delete'));
+
+	// #bands
+
+	$('#bands').on("click", '.delete',function(e) {
+		e.preventDefault();
+    var parent = $(this).parent();
+    //console.log(parent.attr('id'));
+			$.ajax({
+			  type: 'get',
+			  url: 'bands/delete', 
+			  data: 'ajax=' + parent.attr('id') + '&delete=',
+			});        
+		  parent.fadeOut(300,function(){
+		 	parent.remove();
+		});
+	});
+
+
+
 	$('#submit').click(function(e){
 		e.preventDefault();
 		var BandName = $("#bandName").val();
@@ -16,20 +39,6 @@ $(document).ready(function(){
 			} 
 		});
 
-	
-			$('.delete').on("click", function(e) {
-				e.preventDefault();
-        var parent = $(this).parent();
-        //console.log(parent.attr('id'));
-					$.ajax({
-					  type: 'get',
-					  url: 'bands/delete', 
-					  data: 'ajax=' + parent.attr('id') + '&delete=',
-					});        
-				  parent.fadeOut(300,function(){
-				 	parent.remove();
-				});
-			});
 
 
 
