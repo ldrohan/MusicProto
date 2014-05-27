@@ -27,6 +27,8 @@ gem 'sidekiq'
 
 gem 'unicorn'
 
+gem 'pg'
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'pry'
