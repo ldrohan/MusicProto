@@ -60,8 +60,8 @@ recentAlbums();
 			   var albumName = albums[i]["collectionName"];
 			   var releaseDate = albums[i]["releaseDate"];
 			   //console.log(parent);
-			   $('#albums').append(albums[i]["collectionName"] + ', ');
-			   $('#albums').append('<img src="' + albums[i]["artworkUrl60"] + '">');
+			   $('#albums').append(albums[i]["collectionName"] + ' ');
+			   $('#albums').append('<img src="' + albums[i]["artworkUrl60"] + '"></br>');
 				//ITERATES THROUGH API RETURN HASH AND SAVES EACH ALBUM TO DB.			 
 			   $.ajax({url:('/albums/create'), method: ('post'), 
 					data: {"album": {"name":albumName, "releaseDate":releaseDate, "band_id":bandID}}, dataType: "json", success: function(data) {
@@ -69,7 +69,7 @@ recentAlbums();
 					} 
 			  });
 			 }
-			});
+		});
   }
 
 
