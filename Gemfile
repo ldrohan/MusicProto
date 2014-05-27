@@ -24,10 +24,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'sidekiq'
-
 gem 'unicorn'
-
 gem 'pg'
+gem 'devise'
 
 group :development, :test do
   gem 'dotenv-rails'
