@@ -1,13 +1,13 @@
 
 $(document).ready(function(){
 
-	var events = function() {
-			$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
-				for (var i in data) {
-					$('#concerts').append('<li>' + data[0][i]["name"] + '</li>');
-				}
-		});
-	}
+	// var events = function() {
+	// 		$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
+	// 			for (var i in data) {
+	// 				$('#concerts').append('<li>' + data[0][i]["name"] + '</li>');
+	// 			}
+	// 	});
+	// }
 
 
 
