@@ -8,10 +8,10 @@ $(document).ready(function(){
 				  var venues = []
 				for (var i in data[0]) {
 					venues.push(data[0][i]["venue"]);
-					}
+				}
 				console.log(venues);
-				for (var i in venues){
-					$('#concerts').append('<li>' + venues[i]["name"] + '</li>');
+					for (var i in venues){
+						$('#concerts').append('<li>' + venues[i]["name"] + '</li>');
 				  }
 		  });
 	}
@@ -49,7 +49,6 @@ recentAlbums();
 		e.preventDefault();
 		var BandName = $("#bandName").val();
 		$('#bands').append("<li>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</li>");
-		// $('#bands').append('<button class="delete" type="submit">Delete</button>')
 
 		$("#bandName").val("");
 		//SAVES BANDS TO THE DATABASE
@@ -101,6 +100,6 @@ recentAlbums();
 			}
 		});
 	}
-	//loadAlbums();
+	
   loadBands();
 });
