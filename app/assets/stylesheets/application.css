@@ -86,3 +86,13 @@ body {
 	border-radius: .4em;
 /*	display: none;*/
 }
+
+.backbox {
+	position:fixed;
+	width: 60%;
+	height: 80%;
+	top: 10%;
+	left: 20%;
+	background-color: #BDBDBD;
+	z-index: -1;
+}
