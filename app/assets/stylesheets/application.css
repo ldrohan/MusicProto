@@ -1,15 +1,88 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/*font-family: 'Signika', sans-serif;*/
+
+#header {
+	position: relative;
+	background-color: #BDBDBD;
+	margin: -.5em;
+	top: -1em;
+	height: 3em;
+}
+
+.header_links a {
+	font-family: 'Signika', sans-serif;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding: .5em;
+}
+
+#header li {
+	font-family: 'Signika', sans-serif;
+	list-style-image: none;
+	list-style-type: none;
+	float: right;
+	padding: .9em;
+	background-color: #e74c3c;
+}
+
+#logo a {
+	position: relative;
+	font-family: 'Amatic SC', cursive;
+	text-align: left;
+	color: #000000;
+	top: .2em;
+	padding-left: 3%;
+}
+
+.devise {
+	font-family: 'Amatic SC', cursive;
+	text-align: center;
+	color: #000000;
+	line-height: 1.5;
+	font-size: 2em;
+}
+
+.devise a {
+	color: #7f8c8d;
+	text-decoration: none;
+}
+
+.headline {
+	font-family: 'Amatic SC', cursive;
+	text-align: center;
+	color: #FFFFFF;
+	line-height: 1.5;
+	font-size: 2em;
+	position: relatives;
+}
+
+body {
+	background: url("concert3.jpg") no-repeat center center fixed;
+}
+
+#bandName {
+	font-family: 'Signika', sans-serif;
+	font-size: 1.2em;
+	text-align: center;
+	width: 30%;
+	border-radius: .3em;
+	border: none;
+	position: fixed;
+	left: 35%;
+	top: 40%;
+}
+
+#submit {
+	position: fixed;
+	right: 45%;
+	top: 45%;
+	font-family: 'Signika', sans-serif;
+	font-size: 1em;
+	height: 2em;
+	width: 6em;
+	color: #FFFFFF;
+	background-color: #2ecc71;
+	border: none;
+	margin: 1% 0 0 0;
+	border-radius: .4em;
+/*	display: none;*/
+}
