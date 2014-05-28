@@ -33,7 +33,6 @@ class BandsController < ApplicationController
   def events
     @bands = Band.where(user_id: current_user)
     @allevents = []
-    #@frontend = []
     
     @bands.each do |i|
       results = Typhoeus.get("http://api.bandsintown.com/artists/#{i["name"]}/events.json?app_id=musiqproto").body
@@ -41,16 +40,8 @@ class BandsController < ApplicationController
        @allevents.push(events)
     end
 
-    # @allevents[0].each do |x|
-    #   @frontend.push(@allevents[0][x]["venue"])
-    # end  
-
-#  for (var i in data[0]) {
-# ... console.log(data[0][i]["venue"]);
-# ... }
-
     respond_to do |format|
-      format.json { render json: @frontend, status: :ok }
+      format.json { render json: @allevents, status: :ok }
     end    
   end  
   private

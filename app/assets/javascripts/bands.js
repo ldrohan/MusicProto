@@ -1,15 +1,21 @@
 
 $(document).ready(function(){
 	$('#albumheader').hide();
-	// var events = function() {
-	// 		$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
-	// 			for (var i in data) {
-	// 				$('#concerts').append('<li>' + data[0][i]["name"] + '</li>');
-	// 			}
-	// 	});
-	// }
+	var events = function() {
+			$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
+				  var venues = []
+				for (var i in data[0]) {
+					venues.push(data[0][i]["venue"]);
+					// $('#concerts').append('<li>' + data[0][i]["name"] + '</li>');
+				}
+				console.log(venues);
+				for (var i in venues){
+					$('#concerts').append('<li>' + venues[i]["name"] + '</li>');
+				}
+		});
+	}
 
-
+events();
 
 	var recentAlbums = function() {
 			$.ajax('/albums/recent.json', {type: 'get'}).success(function(data){
