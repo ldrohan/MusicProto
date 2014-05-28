@@ -19,7 +19,7 @@ class AlbumsController < ApplicationController
   end
 
   def recent_albums
-    @albums = Album.all
+    @albums = current_user.bands.albums
     @albumshash=[]
     @albums.each do |i|
       if (i["releaseDate"] > 1.month.ago) && (i["releaseDate"] < Time.now)
