@@ -48,7 +48,7 @@ recentAlbums();
 	$('#submit').click(function(e){
 		e.preventDefault();
 		var lowerband = $("#bandName").val();
-		var BandName = $("#bandName").val(); //lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
+		var BandName = lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
 		$('#bands').append("<li>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</li>");
 
 		$("#bandName").val("");
@@ -57,7 +57,7 @@ recentAlbums();
 			data: {"band": {"name":BandName}}, dataType: "json", success: function(data) {
 				var bandID = data.id;
 				loadAlbums(bandID);
-				console.log(data);
+				//console.log(data);
 			} 
 		});
 
