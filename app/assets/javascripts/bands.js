@@ -48,7 +48,7 @@ recentAlbums();
 	$('#submit').click(function(e){
 		e.preventDefault();
 		var lowerband = $("#bandName").val();
-		var BandName = lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
+		var BandName = $("#bandName").val(); //lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
 		$('#bands').append("<li>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</li>");
 
 		$("#bandName").val("");
@@ -81,7 +81,7 @@ recentAlbums();
 				//ITERATES THROUGH API RETURN HASH AND SAVES EACH ALBUM TO DB.			 
 			   $.ajax({url:('/albums/create'), method: ('post'), 
 					data: {"album": {"name":albumName, "releaseDate":releaseDate, "band_id":bandID}}, dataType: "json", success: function(data) {
-					console.log(data);
+					//console.log(data);
 					} 
 			  });
 			 }
