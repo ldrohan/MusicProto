@@ -62,20 +62,20 @@ body {
 	background: url("rock_concert2.jpg") no-repeat center center fixed;
 }
 
-#bandName {
+.input {
 	font-family: 'Signika', sans-serif;
 	font-size: 1.2em;
 	text-align: center;
 	width: 30%;
 	border-radius: .3em;
 	border: none;
-	position: fixed;
+	position: relative;
 	left: 35%;
 	top: 40%;
 }
 
-#submit {
-	position: fixed;
+.button {
+	position: relative;
 	right: 45%;
 	top: 45%;
 	font-family: 'Signika', sans-serif;
@@ -102,6 +102,22 @@ body {
 }
 
 img {
-	float: right;
+	float: left;
 	clear: both;
+}
+
+.recentalbums {
+	text-align: center;
+	color: #FFFFFF;
+	font-family: 'Signika', sans-serif;
+	list-style-image: none;
+	list-style-type: none;
+}
+
+.bandlist {
+	text-align: center;
+	color: #FFFFFF;
+	font-family: 'Signika', sans-serif;
+	list-style-image: none;
+	list-style-type: none;
 }
