@@ -1,18 +1,19 @@
 
 $(document).ready(function(){
 	$('#albumheader').hide();
+
+	//SHOWS EVENTS BASED ON ARTISTS AT TOP OF PAGE
 	var events = function() {
 			$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
 				  var venues = []
 				for (var i in data[0]) {
 					venues.push(data[0][i]["venue"]);
-					// $('#concerts').append('<li>' + data[0][i]["name"] + '</li>');
-				}
+					}
 				console.log(venues);
 				for (var i in venues){
 					$('#concerts').append('<li>' + venues[i]["name"] + '</li>');
-				}
-		});
+				  }
+		  });
 	}
 
 events();
