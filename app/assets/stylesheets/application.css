@@ -22,6 +22,9 @@
 	float: right;
 	padding: .9em;
 	background-color: #e74c3c;
+	border-radius: .5em;
+	margin: .3em .3em 3em .3em;
+	height: .8em;
 }
 
 #logo a {
@@ -95,4 +98,5 @@ body {
 	left: 20%;
 	background-color: #BDBDBD;
 	z-index: -1;
+	border-radius: 1em;
 }
