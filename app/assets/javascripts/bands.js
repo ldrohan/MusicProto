@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-
+	$('#albumheader').hide();
 	// var events = function() {
 	// 		$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
 	// 			for (var i in data) {
@@ -58,6 +58,7 @@ recentAlbums();
 
 
    var loadAlbums = function(bandID) {
+   	$('#albumheader').show();
 		 $.ajax('https://itunes.apple.com/search?term=' + BandName + '&entity=album', {type: 'get', dataType: 'jsonp'}).success
 		 (function(data){
 			var albums = data["results"];
