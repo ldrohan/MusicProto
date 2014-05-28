@@ -19,7 +19,10 @@ class AlbumsController < ApplicationController
   end
 
   def recent_albums
-    @albums = Album.all
+    band_ids = current_user.bands.map(&:id)
+    @albums = Album.where(band_id: band_ids)
+    #binding.pry
+    
     @albumshash=[]
     @albums.each do |i|
       if (i["releaseDate"] > 1.month.ago) && (i["releaseDate"] < Time.now)
