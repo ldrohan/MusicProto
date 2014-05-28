@@ -47,7 +47,8 @@ recentAlbums();
 
 	$('#submit').click(function(e){
 		e.preventDefault();
-		var BandName = $("#bandName").val();
+		var lowerband = $("#bandName").val();
+		var BandName = lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
 		$('#bands').append("<li>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</li>");
 
 		$("#bandName").val("");
