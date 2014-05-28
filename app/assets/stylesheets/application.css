@@ -22,6 +22,9 @@
 	float: right;
 	padding: .9em;
 	background-color: #e74c3c;
+	border-radius: .5em;
+	margin: .3em .3em 3em .3em;
+	height: .8em;
 }
 
 #logo a {
@@ -56,7 +59,7 @@
 }
 
 body {
-	background: url("concert3.jpg") no-repeat center center fixed;
+	background: url("rock_concert2.jpg") no-repeat center center fixed;
 }
 
 #bandName {
@@ -85,4 +88,20 @@ body {
 	margin: 1% 0 0 0;
 	border-radius: .4em;
 /*	display: none;*/
+}
+
+.backbox {
+	position:fixed;
+	width: 60%;
+	height: 80%;
+	top: 10%;
+	left: 20%;
+	background-color: #BDBDBD;
+	z-index: -1;
+	border-radius: 1em;
+}
+
+img {
+	float: right;
+	clear: both;
 }
