@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/bands', to: 'bands#index'
   post '/bands/create', to: 'bands#create'
   get '/bands/delete', to: 'bands#delete'
+  get '/bands/events', to: 'bands#events'
   
   post '/albums/create', to: 'albums#create'
   get '/albums/recent', to: 'albums#recent_albums'

@@ -27,6 +27,7 @@ gem 'sidekiq'
 gem 'unicorn'
 gem 'pg'
 gem 'devise'
+gem 'json'
 
 group :development, :test do
   gem 'dotenv-rails'

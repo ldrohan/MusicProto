@@ -21,7 +21,6 @@ class AlbumsController < ApplicationController
   def recent_albums
     band_ids = current_user.bands.map(&:id)
     @albums = Album.where(band_id: band_ids)
-    #binding.pry
     
     @albumshash=[]
     @albums.each do |i|
