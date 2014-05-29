@@ -2,6 +2,8 @@
 $(document).ready(function(){
 	$('#albumheader').hide();
 	$('#recents').hide();
+	$('.albumbox').hide();
+
 	//SHOWS EVENTS BASED ON ARTISTS AT TOP OF PAGE
 	var events = function() {
 			$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
@@ -84,7 +86,7 @@ recentAlbums();
 		 (function(data){
 			var albums = data["results"];
 			//console.log(albums)
-			
+			$('.albumbox').show();
 			 for(var i in albums) {
 			 	 var parent = $(this).parent();
 			   var albumName = albums[i]["collectionName"];
