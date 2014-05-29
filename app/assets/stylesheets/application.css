@@ -232,9 +232,10 @@ body {
 	list-style-type: none;
 }
 
-/*html, body, #map-canvas {
-        height: 200px;
-        width: 200px;
-        margin: 0px;
-        padding: 20px
-      }*/
+#map-canvas {
+        height: 350px;
+        width: 385px;
+        margin-top: 340px;
+        padding: 20px;
+
+      }
