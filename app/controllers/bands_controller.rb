@@ -33,17 +33,17 @@ class BandsController < ApplicationController
   def events
     @bands = Band.where(user_id: current_user)
     @allevents = []
-    
+
     @bands.each do |i|
       results = Typhoeus.get("http://api.bandsintown.com/artists/#{i["name"]}/events.json?app_id=muziq").body
       events = JSON.parse(results)
-       @allevents.push(events)
+      @allevents.push(events)
     end
 
     respond_to do |format|
       format.json { render json: @allevents, status: :ok }
-    end    
-  end  
+    end
+  end
   private
   def band_params
     params.require(:band).permit(:name)

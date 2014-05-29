@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
     #SHOWS USER's BAND's ALBUMS RELEASED WITHIN THE PAST MONTH
     band_ids = current_user.bands.map(&:id)
     @albums = Album.where(band_id: band_ids)
-    
+
     @albumshash=[]
     @albums.each do |i|
       if (i["releaseDate"] > 1.month.ago) && (i["releaseDate"] < Time.now)

@@ -7,7 +7,7 @@ $(document).ready(function(){
 			$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
 				  var venues = []
 				for (var i in data[0]) {
-
+					console.log(data[0][i]["venue"]);
 					// $('#concerts').append('<li>' + data[0][i]["title"] + '</li>');
 					venues.push(data[0][i]["venue"]);
 				}
@@ -56,6 +56,8 @@ recentAlbums();
 
 	$('#submit').click(function(e){
 		e.preventDefault();
+		
+		if(($("#bandName").val()) !== "") {
 		//CAPITALIZES BANDNAME THROUGH WAY TOO MUCH EFFORT
 		var lowerband = $("#bandName").val();
 		var BandName = lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
@@ -69,8 +71,9 @@ recentAlbums();
 				loadAlbums(bandID);
 				//console.log(data);
 			} 
-		});
 
+		});
+	} 
 
 
 
