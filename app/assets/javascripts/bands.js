@@ -11,7 +11,7 @@ $(document).ready(function(){
 					// $('#concerts').append('<li>' + data[0][i]["title"] + '</li>');
 					venues.push(data[0][i]["venue"]);
 				}
-
+				//ITERATES THROUGH EVENTS, SHOWING RESULTS FOR CA ONLY
 				for (var x in data[0]) {
 					if ((data[0][x]["venue"]["region"]) === "CA") {
 						console.log(data[0][i]);
@@ -53,7 +53,7 @@ recentAlbums();
 
 	$('#submit').click(function(e){
 		e.preventDefault();
-
+		//CAPITALIZES BANDNAME THROUGH WAY TOO MUCH EFFORT
 		var lowerband = $("#bandName").val();
 		var BandName = lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
 		$('#bands').append("<li>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</li>");
@@ -72,6 +72,7 @@ recentAlbums();
 
 
    var loadAlbums = function(bandID) {
+   	//SHOWS ALBUMS AND ARTWORK AS WELL AS SAVES ALBUMS WITH BAND_ID TO DB
    	$('#albumheader').show();
 		 $.ajax('https://itunes.apple.com/search?term=' + BandName + '&entity=album', {type: 'get', dataType: 'jsonp'}).success
 		 (function(data){
@@ -82,7 +83,7 @@ recentAlbums();
 			 	 var parent = $(this).parent();
 			   var albumName = albums[i]["collectionName"];
 			   var releaseDate = albums[i]["releaseDate"];
-			   //console.log(parent);
+			   
 			   $('#albums').append(albums[i]["collectionName"] + ' ');
 			   $('#albums').append('<img src="' + albums[i]["artworkUrl60"] + '"></br>');
 				//ITERATES THROUGH API RETURN HASH AND SAVES EACH ALBUM TO DB.			 

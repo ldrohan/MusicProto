@@ -19,6 +19,7 @@ class AlbumsController < ApplicationController
   end
 
   def recent_albums
+    #SHOWS USER's BAND's ALBUMS RELEASED WITHIN THE PAST MONTH
     band_ids = current_user.bands.map(&:id)
     @albums = Album.where(band_id: band_ids)
     
