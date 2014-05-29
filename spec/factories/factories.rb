@@ -4,8 +4,7 @@ FactoryGirl.define do
   end
 
   factory :user do
-  	name "Luke"
-  	email
+		email
   	password "password"
   	password_confirmation "password"
   end
@@ -13,14 +12,15 @@ FactoryGirl.define do
 
 
 
-  factory :album do
-
+  factory :band do
+  	name "AWESOMEBAND"
+  	user_id 1
   end
 
 
 
 
-  factory :band do
+  factory :album do
   end
 
 end
