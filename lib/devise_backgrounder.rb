@@ -16,7 +16,6 @@ class DeviseBackgrounder
   end
 
   def deliver
-    
     # You need to hardcode the class of the Devise mailer that you
     # actually want to use. The default is Devise::Mailer.
     Devise::Mailer.delay.send(@method, @record, @token, @opts)
