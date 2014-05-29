@@ -21,6 +21,9 @@ FactoryGirl.define do
 
 
   factory :album do
+  	name "AWESOMEALBUM"
+  	band_id 1
+  	releaseDate "2012-03-06T08:00:00Z"
   end
 
 end
