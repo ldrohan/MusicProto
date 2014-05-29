@@ -1,8 +1,13 @@
 /*font-family: 'Signika', sans-serif;*/
+/*font-family: 'Amatic SC', cursive;*/
+
+body {
+	background: url("rock_concert2.jpg") no-repeat center center fixed;
+}
 
 #header {
 	position: relative;
-	background-color: #BDBDBD;
+	background-color: rgba(189, 189, 189, 1);
 	margin: -.5em;
 	top: -1em;
 	height: 3em;
@@ -10,7 +15,7 @@
 
 .header_links a {
 	font-family: 'Signika', sans-serif;
-	color: #FFFFFF;
+	color: rgba(0, 0, 0, 1);
 	text-decoration: none;
 	padding: .4em;
 	vertical-align: text-middle;
@@ -22,19 +27,20 @@
 	list-style-type: none;
 	float: right;
 	vertical-align: text-top;
-	line-height: .9em;
+	line-height: .8em;
 	padding: .9em;
-	background-color: #e74c3c;
+	background-color: rgba(189, 189, 189, 1);
 	border-radius: .5em;
-	margin: .3em .3em 3em .3em;
-	height: .8em;	
+	margin: .4em .3em 3em .3em;
+	height: .5em;
+	vertical-align: text-middle;
 }
 
 #logo a {
 	position: relative;
 	font-family: 'Amatic SC', cursive;
 	text-align: left;
-	color: #000000;
+	color: rgba(0, 0, 0, 1);
 	top: .2em;
 	padding-left: 3%;
 }
@@ -42,85 +48,184 @@
 .devise {
 	font-family: 'Amatic SC', cursive;
 	text-align: center;
-	color: #000000;
-	line-height: 1.5;
-	font-size: 2em;
+	color: rgba(0, 0, 0, 1);
+	font-size: 1.5em;
 }
 
 .devise a {
-	color: #7f8c8d;
+	color: rgba(0, 0, 0, 1);
 	text-decoration: none;
+}
+
+.backbox-devise {
+	position: absolute;
+	width: 40%;
+	right: 30%;
+	top: 3em;
+	background-color: rgba(189,189,189,.8);
+	border-radius: 1em;
 }
 
 .headline {
 	font-family: 'Amatic SC', cursive;
 	text-align: center;
-	color: #FFFFFF;
+	color: rgba(0, 0, 0, 1);
 	line-height: 1.5;
 	font-size: 2em;
-	position: relatives;
+	position: relative;
 }
 
-body {
-	background: url("rock_concert2.jpg") no-repeat center center fixed;
+.sign_in input[type="submit"]{
+	font-family: 'Amatic SC', cursive;
+	font-size: 1em;
+	height: 1.5em;
+	width: 40%;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(231, 76, 60, 1);
+	border: none;
+	border-radius: .4em;
+	margin: 1% 0 0 0;
 }
 
-.input {
+.form input{
 	font-family: 'Signika', sans-serif;
-	font-size: 1.2em;
-	text-align: center;
-	width: 30%;
+	position: relative;
+	font-size: 1em;
+	width: 80%;
 	border-radius: .3em;
 	border: none;
-	position: relative;
-	left: 35%;
-	top: 40%;
+	margin: .2em 0 .2em 0;
+}
+
+.backbox1 {
+	position: absolute;
+	width: 61%;
+	height:2.5em;
+	top: 3.4em;
+	left: 17.5%;
+	background-color: rgba(192, 57, 43, 1);
+	z-index: -1;
+	border-radius: .5em;
+	opacity: 0.7;
+}
+
+.bandinput {
+	font-family: 'Signika', sans-serif;
+	font-size: 1.5em;
+	text-align: center;
+	width: 49%;
+	border-radius: .3em;
+	border: none;
+	position: absolute;
+	right: 33%;
+	top: 2.35em;
 }
 
 .button {
-	position: relative;
-	right: 45%;
-	top: 45%;
+	position: absolute;
+	right: 22%;
+	top: 3.3em;
 	font-family: 'Signika', sans-serif;
-	font-size: 1em;
-	height: 2em;
-	width: 6em;
-	color: #FFFFFF;
-	background-color: #2ecc71;
+	font-size: 1.1em;
+	height: 1.8em;
+	width: 10%;
+	color: rgba(0, 0, 0, 1);
+	background-color: rgba(231, 76, 60, 1);
 	border: none;
-	margin: 1% 0 0 0;
 	border-radius: .4em;
+	clear: both;
+	/*margin: 0 0 0 0;*/
 /*	display: none;*/
 }
 
-.backbox {
-	position:fixed;
-	width: 60%;
-	height: 80%;
-	top: 10%;
-	left: 20%;
-	background-color: #BDBDBD;
+
+.newreleasebox {
+	position: absolute;
+	width: 61%;
+	height: 10em;
+	top: 6.2em;
+	left: 17.5%;
+	background-color: rgba(243, 156, 18, 0.9);
 	z-index: -1;
-	border-radius: 1em;
+	border-radius: .5em;
 }
 
-img {
+.headline1 {
+	position: absolute;
+	font-family: 'Amatic SC', cursive;
+	color: rgba(0, 0, 0, 1);
+	/*line-height: 1.5;*/
+	font-size: 2em;
+	left: 1%;
+	top: -18%;
+}
+
+.concertsbox {
+	position: absolute;
+	width: 61%;
+	height: 10em;
+	top: 16.6em;
+	left: 17.5%;
+	background-color: rgba(52, 73, 94, 0.9);
+	z-index: -1;
+	border-radius: .5em;
+}
+
+.concerts li{
+	font-family: 'Signika', sans-serif;
+	list-style-image: none;
+	list-style-type: none;
+}
+
+/*img {
 	float: left;
 	clear: both;
+}*/
+.existingresults {
+	position: relative;
+	clear: both;
+}
+
+.albumbox {
+	position: absolute;
+	width: 61%;
+	height: 10em;
+	top: 27.1em;
+	left: 17.5%;
+	background-color: rgba(52, 73, 94, 0.9);
+	z-index: -1;
+	border-radius: .5em;
 }
 
 .recentalbums {
 	text-align: center;
-	color: #FFFFFF;
+	color: rgba(255, 255, 255, 1);
+	font-family: 'Signika', sans-serif;
+	font-size: 1.3em;
+	list-style-image: none;
+	list-style-type: none;
+}
+
+
+.bandlist {
+	text-align: left;
+	color: rgba(255, 255, 255, 1);
 	font-family: 'Signika', sans-serif;
 	list-style-image: none;
 	list-style-type: none;
 }
 
-.bandlist {
-	text-align: center;
-	color: #FFFFFF;
+.albumlist ul {
 	font-family: 'Signika', sans-serif;
+	color: rgba(255, 255, 255, 1);
+/*	white-space: nowrap;*/
+}
+
+.albumlist li {
+	display: inline-block;
+	width: 8em;
+	height: 2.7em;
 	list-style-image: none;
 	list-style-type: none;
 }
+
