@@ -7,12 +7,18 @@ $(document).ready(function(){
 			$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
 				  var venues = []
 				for (var i in data[0]) {
+
+					// $('#concerts').append('<li>' + data[0][i]["title"] + '</li>');
 					venues.push(data[0][i]["venue"]);
 				}
-				console.log(venues);
-					for (var i in venues){
-						$('#concerts').append('<li>' + venues[i]["name"] + '</li>');
-				  }
+
+				for (var x in data[0]) {
+					if ((data[0][x]["venue"]["region"]) === "CA") {
+						console.log(data[0][i]);
+						$('#concerts').append('<li>' + data[0][i]["artists"][0]["name"] + "  " + data[0][i]["datetime"] + "  " + data[0][i]["venue"]["name"] + '</li>');
+					}
+				}
+					
 		  });
 	}
 
@@ -47,6 +53,7 @@ recentAlbums();
 
 	$('#submit').click(function(e){
 		e.preventDefault();
+
 		var lowerband = $("#bandName").val();
 		var BandName = lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
 		$('#bands').append("<li>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</li>");
