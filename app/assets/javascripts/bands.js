@@ -91,7 +91,6 @@ recentAlbums();
 			   var releaseDate = albums[i]["releaseDate"];
 			   //console.log(parent);
 			   $('#albums').append('<li>'+ albums[i]["collectionName"] + ' ' + '<img src="' + albums[i]["artworkUrl60"] + '"></li>');
-			   // $('#albums').append();
 				//ITERATES THROUGH API RETURN HASH AND SAVES EACH ALBUM TO DB.			 
 			   $.ajax({url:('/albums/create'), method: ('post'), 
 					data: {"album": {"name":albumName, "releaseDate":releaseDate, "band_id":bandID}}, dataType: "json", success: function(data) {
