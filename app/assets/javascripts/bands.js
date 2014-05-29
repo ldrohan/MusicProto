@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 	$('#albumheader').hide();
-
+	$('#recents').hide();
 	//SHOWS EVENTS BASED ON ARTISTS AT TOP OF PAGE
 	var events = function() {
 			$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
@@ -28,6 +28,9 @@ events();
 			$.ajax('/albums/recent.json', {type: 'get'}).success(function(data){
 				for (var i in data) {
 					$('#recentalbums').append('<li>' + data[i] + '</li>');
+					if (data[i].length > 0){
+						$('#recents').show();
+					}
 				}
 		});
 	}
