@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
   def recent_albums
     #SHOWS USER's BAND's ALBUMS RELEASED WITHIN THE PAST MONTH
     band_ids = current_user.bands.map(&:id)
-    @albums = Album.where(band_id: band_ids)
+    @albums = Album.where(band_id: band_ids)  
 
     @albumshash=[]
     @albums.each do |i|
@@ -33,7 +33,6 @@ class AlbumsController < ApplicationController
       format.json { render json: @albumshash, status: :ok }
     end
   end
-
 
   def album_release
     #this method will iterate through release Dates and start the sidekiq worker.
