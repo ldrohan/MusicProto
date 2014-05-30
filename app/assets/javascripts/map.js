@@ -15,7 +15,7 @@ function initialize() {
                                        position.coords.longitude);    
       var image = 'http://www.centervilleohio.gov/ccb/blue-note.gif';
       var current = 'http://img.lib.msu.edu/mobile/user_icon_g.png';
-      var trafficIcon = 'http://www.mricons.com/store/png/115142_32453_24_danger_icon.png';
+      
         
         
         
