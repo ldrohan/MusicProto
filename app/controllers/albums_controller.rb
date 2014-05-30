@@ -5,11 +5,10 @@ class AlbumsController < ApplicationController
   def create
     #@albums = Album.all
     @album = Album.create(album_params)
-
+    album_release
     respond_to do |format|
       if @album.save
         format.json { render json: @album, status: :created }
-        album_release
 
       else
         format.json { render json: @album.errors, status: :unprocessable_entity}
@@ -35,13 +34,15 @@ class AlbumsController < ApplicationController
   end
 
   def album_release
-    #this method will iterate through release Dates and start the sidekiq worker.
-    @albums = Album.all
+    band_ids = current_user.bands.map(&:id)
+    @albums = Album.where(band_id: band_ids)
+
+    
     @albums.each do |i|
       if i["releaseDate"] > Time.now
-        AlbumMailer.status_email
-        #puts i["name"]
-        #puts i["releaseDate"]
+        AlbumMailer.album_email
+        puts i["name"]
+        puts i["releaseDate"]
       end
     end
   end
