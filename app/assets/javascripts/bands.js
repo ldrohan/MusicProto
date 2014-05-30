@@ -7,17 +7,17 @@ $(document).ready(function(){
 	//SHOWS EVENTS BASED ON ARTISTS AT TOP OF PAGE
 	var events = function() {
 			$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
-				  var venues = []
-				for (var i in data[0]) {
-					console.log(data[0][i]["venue"]);
-					// $('#concerts').append('<li>' + data[0][i]["title"] + '</li>');
-					venues.push(data[0][i]["venue"]);
-				}
+				//   var venues = []
+				// for (var i in data[0]) {
+				// 	console.log(data[0][i]["venue"]);
+				// 	// $('#concerts').append('<li>' + data[0][i]["title"] + '</li>');
+				// 	venues.push(data[0][i]["venue"]);
+				// }
 				//ITERATES THROUGH EVENTS, SHOWING RESULTS FOR CA ONLY
 				for (var x in data[0]) {
 					if ((data[0][x]["venue"]["region"]) === "CA") {
-						console.log(data[0][i]);
-						$('#concerts').append('<li>' + data[0][i]["artists"][0]["name"] + "  " + data[0][i]["datetime"] + "  " + data[0][i]["venue"]["name"] + '</li>');
+						console.log(data[0][x]);
+						$('#concerts').append('<li>' + data[0][x]["artists"][0]["name"] + "  " + data[0][x]["datetime"] + "  " + data[0][x]["venue"]["name"] + '</li>');
 					}
 				}
 					
