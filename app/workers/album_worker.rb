@@ -1,6 +1,6 @@
 class BandWorker
-	include Sidekiq::Worker
-	def perform()
-		
-	end	
+	#include Sidekiq::Worker
+  #include Sidetiq::Schedulable
+  def perform()
+	end
 end	
