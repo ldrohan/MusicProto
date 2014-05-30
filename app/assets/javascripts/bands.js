@@ -58,7 +58,7 @@ recentAlbums();
 		//CAPITALIZES BANDNAME THROUGH WAY TOO MUCH EFFORT
 		var lowerband = $("#bandName").val();
 		var BandName = lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
-		$('#bands').append("<li>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</li>");
+		$('#bands').append("<div>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</div>");
 
 		$("#bandName").val("");
 		//SAVES BANDS TO THE DATABASE
@@ -87,7 +87,7 @@ recentAlbums();
 			   var albumName = albums[i]["collectionName"];
 			   var releaseDate = albums[i]["releaseDate"];
 			   //console.log(parent);
-			   $('#albums').append('<li>'+ albums[i]["collectionName"] + ' ' + '<img src="' + albums[i]["artworkUrl60"] + '"></li>');
+			   $('#albums').append('<div class="indiv_album">'+ albums[i]["collectionName"] + ' ' + '<img src="' + albums[i]["artworkUrl60"] + '"></div>');
 				//ITERATES THROUGH API RETURN HASH AND SAVES EACH ALBUM TO DB.			 
 			   $.ajax({url:('/albums/create'), method: ('post'), 
 					data: {"album": {"name":albumName, "releaseDate":releaseDate, "band_id":bandID}}, dataType: "json", success: function(data) {
