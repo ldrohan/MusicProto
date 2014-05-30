@@ -13,8 +13,7 @@ class AlbumMailer < ActionMailer::Base
   	
 
   def status_email(user)
-   user.email
-  	mail(to:"smtp.gmail.com",subject:"Album releases",body:"Here are upcoming album releases for the artists you follow!")
+  	mail(to: user.email,subject:"Album releases",body:"Here are upcoming album releases for the artists you follow!")
   end	
 
 end
