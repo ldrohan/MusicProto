@@ -1,4 +1,4 @@
-$(document).ready(funciton(){
-	$('.albumbox').perfectScrollbar('update');
-});
+// $(document).ready(funciton(){
+// 	$('.albumbox').perfectScrollbar('update');
+// });
 

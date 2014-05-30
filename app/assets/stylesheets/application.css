@@ -2,7 +2,7 @@
 /*font-family: 'Amatic SC', cursive;*/
 
 body {
-	background: url("http://imgur.com/fHZdBPo") no-repeat center center fixed;
+	background: url("rock_concert2.jpg") no-repeat center center fixed;
 }
 
 #header {
@@ -138,16 +138,16 @@ body {
 /*	display: none;*/
 }
 
-
 .newreleasebox {
 	position: absolute;
 	width: 61%;
 	height: 10em;
 	top: 6.2em;
 	left: 17.5%;
-	background-color: rgba(243, 156, 18, 0.9);
+	background-color: rgba(189,189,189,.8);
 	z-index: -1;
 	/*border-radius: .5em;*/
+	/*overflow: scroll;*/
 }
 
 .headline1 {
@@ -157,16 +157,15 @@ body {
 	/*line-height: 1.5;*/
 	font-size: 2em;
 	left: 1%;
-	top: -18%;
 }
 
 .concertsbox {
 	position: absolute;
 	width: 61%;
-	height: 10em;
+	height: 15em;
 	top: 16.6em;
 	left: 17.5%;
-	background-color: rgba(52, 73, 94, 0.9);
+	background-color: rgba(189,189,189,.8);
 	z-index: -1;
 	/*border-radius: .5em;*/
 }
@@ -175,6 +174,18 @@ body {
 	font-family: 'Signika', sans-serif;
 	list-style-image: none;
 	list-style-type: none;
+}
+
+#map-canvas {
+		top: 16.6em;
+		position: absolute;
+        height: 15em;
+        width: 15em;
+        float: right;
+        right: 21.5%;
+        /*margin-top: 340px;*/
+        /*padding: 20px;*/
+
 }
 
 /*img {
@@ -192,11 +203,11 @@ body {
 	height: 10em;
 	top: 27.1em;
 	left: 17.5%;
-	background-color: rgba(52, 73, 94, 0.9);
+	background-color: rgba(189,189,189,.8);
 	z-index: -1;
 	/*border-radius: .5em;*/
-	overflow: hidden;
-	text-overflow: ellipsis;
+	overflow: scroll;
+	/*text-overflow: ellipsis;*/
 }
 
 .indiv_album {
@@ -240,10 +251,15 @@ body {
 	list-style-type: none;
 }
 
-#map-canvas {
-        height: 350px;
-        width: 420px;
-        margin-top: 340px;
-        padding: 20px;
-
-      }
+.savedartists {
+	position: absolute;
+	width: 61%;
+	height: 11em;
+	top: 47.1em;
+	left: 17.5%;
+	background-color: rgba(189,189,189,.8);
+	z-index: -1;
+	/*border-radius: .5em;*/
+	overflow: scroll;
+	/*text-overflow: ellipsis;*/
+}
