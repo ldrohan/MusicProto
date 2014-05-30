@@ -202,7 +202,7 @@ body {
 	position: absolute;
 	width: 61%;
 	height: 10em;
-	top: 8em;
+	top: 46em;
 	left: 10%;
 	background-color: rgba(189,189,189,.8);
 	z-index: -1;
@@ -236,6 +236,12 @@ body {
 	font-family: 'Signika', sans-serif;
 	list-style-image: none;
 	list-style-type: none;
+}
+
+.bander {
+	float: left;
+	position: relative;
+	clear: both;
 }
 
 .albumlist ul {
