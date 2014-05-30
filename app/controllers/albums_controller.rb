@@ -39,6 +39,7 @@ class AlbumsController < ApplicationController
 
     emailalbums = []
     @albums.each do |i|
+
       if (i["releaseDate"]) > Time.now
         emailalbums.push(i["name"])
         #binding.pry
