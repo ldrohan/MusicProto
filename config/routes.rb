@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   post '/albums/create', to: 'albums#create'
   get '/albums/recent', to: 'albums#recent_albums'
+  get '/albums/email', to: 'albums#album_release'
 end
 
 #                   Prefix Verb   URI Pattern                    Controller#Action

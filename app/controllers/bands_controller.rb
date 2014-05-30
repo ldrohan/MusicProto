@@ -35,7 +35,7 @@ class BandsController < ApplicationController
     @allevents = []
 
     @bands.each do |i|
-      results = Typhoeus.get("http://api.bandsintown.com/artists/#{i["name"]}/events.json?app_id=YOUR_APP_ID").body
+      results = Typhoeus.get("http://api.bandsintown.com/artists/#{i["name"]}/events.json?app_id=lamusica").body
       events = JSON.parse(results)
       @allevents.push(events)
     end

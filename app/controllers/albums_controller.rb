@@ -5,11 +5,11 @@ class AlbumsController < ApplicationController
   def create
     #@albums = Album.all
     @album = Album.create(album_params)
-    album_release
+    
     respond_to do |format|
       if @album.save
         format.json { render json: @album, status: :created }
-
+        album_release
       else
         format.json { render json: @album.errors, status: :unprocessable_entity}
       end
@@ -39,10 +39,10 @@ class AlbumsController < ApplicationController
 
     
     @albums.each do |i|
-      if i["releaseDate"] > Time.now
-        AlbumMailer.album_email
-        puts i["name"]
-        puts i["releaseDate"]
+      if (i["releaseDate"]) > Time.now
+        AlbumMailer.album_email(i["name"], i["releaseDate"]).deliver
+      else
+        puts "Nope"
       end
     end
   end

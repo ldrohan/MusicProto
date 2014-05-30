@@ -8,6 +8,6 @@
 
 
 @album = Album.create(name: "Pinkerton",releaseDate: "1996-09-24T07:00:00Z", artWorkUrl: "http://a1.mzstatic.com/us/r30/Features/ae/e7/85/dj.jchgmxez.100x100-75.jpg" , band_id:1)
-@band = Band.create(name: "Weezer")
+#@band = Band.create(name: "Weezer")
 
   
