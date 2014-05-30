@@ -4,7 +4,7 @@ class BandsController < ApplicationController
   def index
     @bands = Band.where(user_id: current_user)
     respond_to do |format|
-      format.html 
+      format.html
       format.json {render :json => @bands, :only => [:id, :name]}
     end
     @band = Band.new

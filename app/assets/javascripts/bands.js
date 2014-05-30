@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	//HIDING CSS ELEMENTS ON PAGE LOAD
 	$('#albumheader').hide();
 	$('#recents').hide();
 	$('.albumbox').hide();
