@@ -58,7 +58,7 @@ recentAlbums();
 		//CAPITALIZES BANDNAME THROUGH WAY TOO MUCH EFFORT
 		var lowerband = $("#bandName").val();
 		var BandName = lowerband.charAt(0).toUpperCase() + lowerband.substring(1);
-		$('#bands').append("<div>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</div>");
+		$('#bands').append("<div class='bander'>" + BandName + '<button class="delete" type="submit">Delete</button>' + "</div>");
 
 		$("#bandName").val("");
 		//SAVES BANDS TO THE DATABASE
