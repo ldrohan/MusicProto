@@ -7,12 +7,6 @@ $(document).ready(function(){
 	//SHOWS EVENTS BASED ON ARTISTS AT TOP OF PAGE
 	var events = function() {
 			$.ajax('/bands/events.json', {type: 'get'}).success(function(data){
-				//   var venues = []
-				// for (var i in data[0]) {
-				// 	console.log(data[0][i]["venue"]);
-				// 	// $('#concerts').append('<li>' + data[0][i]["title"] + '</li>');
-				// 	venues.push(data[0][i]["venue"]);
-				// }
 				//ITERATES THROUGH EVENTS, SHOWING RESULTS FOR CA ONLY
 				for (var x in data[0]) {
 					if ((data[0][x]["venue"]["region"]) === "CA") {
