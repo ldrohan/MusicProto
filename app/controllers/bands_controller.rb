@@ -10,6 +10,10 @@ class BandsController < ApplicationController
     @band = Band.new
   end
 
+  def new
+    @band = Band.new
+  end
+
   def create
     @band = Band.create(band_params)
     @band.user_id = current_user.id
